@@ -1,0 +1,13 @@
+<form class="my-4" #loginForm="ngForm" (ngSubmit)="CognitoLogin()">
+    <div class="form-group my-3">
+        <label for="username">Username</label>
+        <input type="username" class="form-control" id="username" name="username" placeholder="Enter username" [(ngModel)]="form.username" required>
+    </div>
+    <div class="form-group my-3">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)]="form.password" required>
+    </div>
+    <div class="d-flex justify-content-center my-4">
+        <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid || isLoading">Login</button>
+    </div>
+</form>

@@ -1,0 +1,33 @@
+<div *ngIf="!userRegistered">
+    <h5 class="card-title">Sign up Via Cognito</h5>
+    <form class="my-4" #signUpForm="ngForm" (ngSubmit)="cognitoSignUp()">
+        <div class="form-group my-3">
+            <label for="username">Username</label>
+            <input type="username" class="form-control" id="username" name="username" placeholder="Enter username" [(ngModel)]="form.username" required>
+        </div>
+        <div class="form-group my-3">
+            <label for="username">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" [(ngModel)]="form.email" required>
+        </div>
+        <div class="form-group my-3">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)]="form.password" required>
+        </div>
+        <div class="d-flex justify-content-center my-4">
+            <button type="submit" class="btn btn-primary" [disabled]="!signUpForm.valid || isLoading">Sign Up</button>
+        </div>
+    </form>
+</div>
+
+<div *ngIf="userRegistered">
+    <h5 class="card-title">Confirm Cognito code</h5>
+    <form class="my-4" #confirmForm="ngForm" (ngSubmit)="cognitoConfirm()" *ngIf="userRegistered">
+        <div class="form-group my-3">
+            <input type="code" class="form-control" id="code" name="code" placeholder="Enter Code" [(ngModel)]="confirmCode" required>
+        </div>
+
+        <div class="d-flex justify-content-center my-4">
+            <button type="submit" class="btn btn-primary" [disabled]="!confirmForm.valid || confirmIsLoading">Confirm</button>
+        </div>
+    </form>
+</div>

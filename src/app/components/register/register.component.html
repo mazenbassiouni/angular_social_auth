@@ -1,0 +1,20 @@
+<div class="row justify-content-center">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="text-center">Sign up</h3>
+            </div>
+            <div class="card-body">
+                <div class="my-4">
+                    <app-cognito-signup-form></app-cognito-signup-form>
+                </div>
+                <hr>
+                <h5 class="text-center">Or Sign up via</h5>
+                <div class="d-flex align-items-center justify-content-around my-5">
+                    <button class="btn btn-primary" (click)="FBLogin()">Facebook</button>
+                    <asl-google-signin-button size="large" data-theme="filled_blue"></asl-google-signin-button>
+                </div>
+            </div>
+          </div>
+    </div>
+</div>
