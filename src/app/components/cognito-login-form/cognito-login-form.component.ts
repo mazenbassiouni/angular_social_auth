@@ -82,6 +82,7 @@ export class CognitoLoginFormComponent implements OnInit {
       this.auth.changeAuthStatus(true);
       this.router.navigateByUrl('profile');
     }else{
+      this.isLoading = false;
       console.log(data);
     }
   }
